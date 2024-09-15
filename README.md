@@ -21,7 +21,7 @@ The DegenToken smart contract powers the in-game economy for Degen Gaming. Playe
 1. Clone this repository:
 bash
 Copy code
-git clone https://github.com/your-repo/DegenToken.git
+git clone https://github.com/Johnycrown/DegenToken.git
 2. cd DegenToken
 **Install dependencies**:
 

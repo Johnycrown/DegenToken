@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 contract DegenToken is ERC20, Ownable {
 
     mapping(uint256 =>  StoreItem) public store;
-    mapping (address => StoreItem) public redeemedAwards;
+    mapping (address => string[]) public redeemedAwards;
     uint256 storeId;
     StoreItem[] storeItems;
 
@@ -57,7 +57,9 @@ contract DegenToken is ERC20, Ownable {
        uint256 itemsValue = store[itemsId].itemPrice;
        require(itemsValue < balanceOf(msg.sender), "Insufficient balance to redeem this token");
        burnToken(itemsValue);
-      //redeemedAwards[msg.sender].store[itemsId];
+       StoreItem memory storeitem = store[itemsId];
+       
+      redeemedAwards[msg.sender].push(storeitem.itemName);
 
 
     }

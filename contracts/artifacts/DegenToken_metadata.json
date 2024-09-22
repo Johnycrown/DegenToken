@@ -319,19 +319,19 @@
 						"internalType": "address",
 						"name": "",
 						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"name": "redeemedAwards",
 				"outputs": [
 					{
 						"internalType": "string",
-						"name": "itemName",
+						"name": "",
 						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "itemPrice",
-						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -623,11 +623,11 @@
 			]
 		},
 		"contracts/DegenToken.sol": {
-			"keccak256": "0x3ac870ebf0a097d0d135d0ed2838719691c90b0b92a6af7ba89d8045a6d568cf",
+			"keccak256": "0x62e0ccc1674d6b4493760450dc8f0b17733e176ed6bb131bcd4bf059b3731eee",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2c81f53854d80a28866fed91292e98f5e747c38669bf68085e55a3abe49289b6",
-				"dweb:/ipfs/QmcxeznRDtRLtYeBUjnrvTY2cwLXeYdLj1M51b3MnWuihV"
+				"bzz-raw://39b9b241baecfc232333e3a3e8f1e8b2b03cb0e99809e0a5f410f0c754b77b8c",
+				"dweb:/ipfs/QmNWuzQTWBdkzFMAFnZFzLFy3KocUUDXU5snbgVTqgwhft"
 			]
 		}
 	},

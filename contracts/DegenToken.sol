@@ -70,8 +70,7 @@ contract DegenToken is ERC20, Ownable {
 }
 
 //account address:               0xEB7F414e77F55d50822F9FbFFA6781EaA8a26D9f  
-//deployed contract address:     0xbCE102F057386E5a24f87b3461b3b634AF8c3080  
-
-   
+//deployed contract address:     0x54c48DFB130F095002025aF38af6AfBbe042C8de
+   //0x54c48DFB130F095002025aF38af6AfBbe042C8de
 
 }

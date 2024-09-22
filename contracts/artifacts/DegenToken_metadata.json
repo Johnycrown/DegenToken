@@ -160,6 +160,24 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "itemName",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "createStoreItem",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "decimals",
 				"outputs": [
@@ -285,9 +303,9 @@
 			{
 				"inputs": [
 					{
-						"internalType": "string",
-						"name": "items",
-						"type": "string"
+						"internalType": "uint256",
+						"name": "itemsId",
+						"type": "uint256"
 					}
 				],
 				"name": "redeemDogenToken",
@@ -301,19 +319,19 @@
 						"internalType": "address",
 						"name": "",
 						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
 					}
 				],
 				"name": "redeemedAwards",
 				"outputs": [
 					{
 						"internalType": "string",
-						"name": "",
+						"name": "itemName",
 						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "itemPrice",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -329,16 +347,21 @@
 			{
 				"inputs": [
 					{
-						"internalType": "string",
+						"internalType": "uint256",
 						"name": "",
-						"type": "string"
+						"type": "uint256"
 					}
 				],
 				"name": "store",
 				"outputs": [
 					{
+						"internalType": "string",
+						"name": "itemName",
+						"type": "string"
+					},
+					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "itemPrice",
 						"type": "uint256"
 					}
 				],
@@ -460,14 +483,21 @@
 				"name": "viewStoreItems",
 				"outputs": [
 					{
-						"internalType": "string[]",
+						"components": [
+							{
+								"internalType": "string",
+								"name": "itemName",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "itemPrice",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct DegenToken.StoreItem[]",
 						"name": "",
-						"type": "string[]"
-					},
-					{
-						"internalType": "uint256[]",
-						"name": "",
-						"type": "uint256[]"
+						"type": "tuple[]"
 					}
 				],
 				"stateMutability": "view",
@@ -593,11 +623,11 @@
 			]
 		},
 		"contracts/DegenToken.sol": {
-			"keccak256": "0x9904bb4cd70d1ecf93aa908b3cd225c0889df2a6b18542eaf34f4be15e39e843",
+			"keccak256": "0x3ac870ebf0a097d0d135d0ed2838719691c90b0b92a6af7ba89d8045a6d568cf",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://379aca6d5230ad498f024b6dd2397cd263864fa486f8aee5212dd26d61bb4199",
-				"dweb:/ipfs/QmbSUoj2NPUEvfx7w6NMZZYEkoo6eN3bpDE3SU6D9daNzc"
+				"bzz-raw://2c81f53854d80a28866fed91292e98f5e747c38669bf68085e55a3abe49289b6",
+				"dweb:/ipfs/QmcxeznRDtRLtYeBUjnrvTY2cwLXeYdLj1M51b3MnWuihV"
 			]
 		}
 	},

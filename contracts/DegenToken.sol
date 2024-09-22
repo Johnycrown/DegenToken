@@ -6,16 +6,30 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract DegenToken is ERC20, Ownable {
 
-    mapping(string=> uint256) public store;
-    mapping (address => string[]) public redeemedAwards;
+    mapping(uint256 =>  StoreItem) public store;
+    mapping (address => StoreItem) public redeemedAwards;
+    uint256 storeId;
+    StoreItem[] storeItems;
 
     constructor() ERC20("Degen", "DGN") {
-        store["NFT"] = 20;
-        store["Cup"] = 5;
-        store["BasketBall"] = 6;
-        store["ARTwork"] = 10;
 
 
+    }
+    struct StoreItem{
+        string itemName;
+        uint256 itemPrice;
+       
+
+    }
+    function createStoreItem(string memory itemName, uint256 amount) external {
+                storeId +=1;
+
+        StoreItem storage storeitem = store[storeId];
+        storeitem.itemName = itemName;
+        storeitem.itemPrice = amount;
+        storeItems.push(storeitem);
+
+        
     }
 
         function mint(address to, uint256 amount) public onlyOwner {
@@ -38,31 +52,19 @@ contract DegenToken is ERC20, Ownable {
         transferFrom(msg.sender, recipient, amount);
       
     }
-    function redeemDogenToken(string memory items) public {
-       uint256 itemsValue = store[items];
+    function redeemDogenToken(uint256  itemsId) public {
+        
+       uint256 itemsValue = store[itemsId].itemPrice;
        require(itemsValue < balanceOf(msg.sender), "Insufficient balance to redeem this token");
        burnToken(itemsValue);
-       redeemedAwards[msg.sender].push(items);
+      //redeemedAwards[msg.sender].store[itemsId];
 
 
     }
 
-    function viewStoreItems() external view returns (string[] memory, uint256[] memory) {
-    uint256[] memory itemPrices = new uint256[](4);
-    string[] memory itemNames = new string[](4);
-
-
-    itemNames[0] = "NFT";
-    itemNames[1] = "Cup";
-    itemNames[2] = "BasketBall";
-    itemNames[3] = "ARTwork";
-
-    itemPrices[0] = store["NFT"];
-    itemPrices[1] = store["Cup"];
-    itemPrices[2] = store["BasketBall"];
-    itemPrices[3] = store["ARTwork"];
-
-    return (itemNames, itemPrices);
+    function viewStoreItems() external view returns (StoreItem[] memory) {
+    
+    return storeItems;
 }
 
 //account address:               0xEB7F414e77F55d50822F9FbFFA6781EaA8a26D9f  

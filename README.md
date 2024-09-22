@@ -25,8 +25,11 @@ git clone https://github.com/Johnycrown/DegenToken.git
 2. cd DegenToken
 **Install dependencies**:
 
-type this on your terminal to install the necessary dependencies:   npm install
+type this on your terminal to install the necessary dependencies:  
+npm install
+
 Ensure you have a valid Avalanche blockchain setup or use a testnet like Fuji.
+
 Modifications
 Modify the store items and prices by editing the store mapping in the DegenToken.sol file.
 
